@@ -1,0 +1,2 @@
+var instructor;
+instructor = {};
