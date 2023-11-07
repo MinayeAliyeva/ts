@@ -55,12 +55,10 @@
 // let sayac=0
 // console.log(typeof(sayac));
 
-
 // function increment(count:number):number{
 // return count++
 // }
 // increment(6)
-
 
 // // let a="ssomenj"
 // // let b=45
@@ -71,13 +69,56 @@
 // }
 // let total:number=sum(10,14)
 
+// interface Employee{
+//   name:string,
+//   code:number
+// }
+// let employee=<Employee>{}
+// console.log(typeof(employee));
+// employee.name="can"
 
-interface Employee{
-  name:string,
-  code:number
+// console.log(employee);
+
+//condition loop
+
+// let x: number = 25;
+// let y: number = 25;
+
+// // if (x > y) {
+// //   console.log(`${x} buyukdur ${y}`);
+// // } else if (x < y) {
+// //   console.log(`${y} buyukdur ${x}`);
+// // } else {
+// // console.log("==");
+
+// // }
+
+// x > y ? console.log("x>y") : console.log("x<y");
+
+let day: number = 22;
+switch (day) {
+  case 0:
+    console.log("bazar");
+    break;
+  case 1:
+    console.log("cuma");
+    break;
+  case 2:
+    console.log("sali");
+    break;
+  case 3:
+    console.log("cersembe");
+    break;
+  case 4:
+    console.log("cuma");
+    break;
+  case 5:
+    console.log("bazar");
+    break;
+  case 6:
+    console.log("pazartesi");
+    break;
+    default:console.log("def");
+    break;
+    
 }
-let employee=<Employee>{}
-console.log(typeof(employee));
-employee.name="can"
-
-console.log(employee);
