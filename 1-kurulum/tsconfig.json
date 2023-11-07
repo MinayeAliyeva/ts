@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    // Diğer ayarlar
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "moduleDetection": "force"
+  }
+}
