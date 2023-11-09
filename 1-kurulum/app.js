@@ -26,34 +26,63 @@ var Person = /** @class */ (function () {
     };
     return Person;
 }());
-//yeni class toretiyoruz
-var Employee = /** @class */ (function (_super) {
-    __extends(Employee, _super);
-    //parent clasimin constructorunu super keywordu ile cagiririq
-    function Employee(id, firstName, lastName) {
-        //parent clasimin constructorunu tetikliyorum
-        return _super.call(this, id, firstName, lastName) || this;
+// //yeni class toretiyoruz
+// class Employee extends Person {
+//   //parent clasimin constructorunu super keywordu ile cagiririq
+//   constructor(id: number, firstName: string, lastName: string) {
+//     //parent clasimin constructorunu tetikliyorum
+//     super(id, firstName, lastName);
+//   }
+// }
+// let employee = new Employee(29, "Can", "Boz");
+// console.log(employee.getFullName());
+// // let personInfo = new Person(43, "Can", "Boz");
+// // console.log(personInfo.id);
+// class Circle {
+//   static pi: number = 3.14;
+//   pi = 3;
+//   constructor(){
+//     this.pi++
+//     Circle.pi++
+//   }
+//   static hesabla(x: number) {
+//     return this.pi * x * x;
+//   }
+// }
+// let objem = new Circle();
+// let objem2 = new Circle();
+// let objem3 = new Circle();
+// console.log("circle",Circle.pi);
+// console.log("obj",objem.pi);
+//abstract class
+var Department = /** @class */ (function () {
+    function Department(name) {
+        this.name = name;
     }
-    return Employee;
-}(Person));
-var employee = new Employee(29, "Can", "Boz");
-console.log(employee.getFullName());
-// let personInfo = new Person(43, "Can", "Boz");
-// console.log(personInfo.id);
-var Circle = /** @class */ (function () {
-    function Circle() {
-        this.pi = 3;
-        this.pi++;
-        Circle.pi++;
-    }
-    Circle.hesabla = function (x) {
-        return this.pi * x * x;
+    Department.prototype.printName = function () {
+        console.log("Department name :" + this.name);
     };
-    Circle.pi = 3.14;
-    return Circle;
+    return Department;
 }());
-var objem = new Circle();
-var objem2 = new Circle();
-var objem3 = new Circle();
-console.log("circle", Circle.pi);
-console.log("obj", objem.pi);
+///
+var AccountingDepartment = /** @class */ (function (_super) {
+    __extends(AccountingDepartment, _super);
+    function AccountingDepartment() {
+        return _super.call(this, "Acounting and autuding") || this;
+    }
+    AccountingDepartment.prototype.printMeeting = function () {
+        console.log("Bbbbbb");
+    };
+    AccountingDepartment.prototype.generateReport = function () {
+        console.log("generate");
+    };
+    return AccountingDepartment;
+}(Department));
+//referans verib new instansda 
+var department;
+department = new AccountingDepartment();
+// let department = new AccountingDepartment();
+//miras alddik accountingDepartment
+department.printName();
+department.printMeeting();
+// department.generateReport();
