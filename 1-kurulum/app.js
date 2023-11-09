@@ -1,24 +1,42 @@
-function add(a, b) {
-    return a + b;
-}
-var sum = add(3, 5);
-console.log(sum);
-function bastir() {
-    console.log("Can Boz");
-}
-bastir();
-function birlesdir(name, sname) {
-    if (sname === void 0) { sname = "Boz"; }
-    return "".concat(name, "  ").concat(sname);
-}
-console.log(birlesdir('Minaya'));
-function carpim(a, b, c) {
-    if (typeof c !== "undefined") {
-        return a * b * c;
+//parent
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Person = /** @class */ (function () {
+    //deger atamasi icin
+    function Person(id, firstName, lastName) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
-    return a * b;
-}
-console.log(carpim(3, 4, 5));
-//arrow
-var carpim = function () { return console.log('jj'); };
-carpim();
+    Person.prototype.getFullName = function () {
+        return "".concat(this.firstName, " ").concat(this.lastName);
+    };
+    return Person;
+}());
+//yeni class toretiyoruz 
+var Employee = /** @class */ (function (_super) {
+    __extends(Employee, _super);
+    //parent clasimin constructorunu super keywordu ile cagiririq
+    function Employee(id, firstName, lastName) {
+        //parent clasimin constructorunu tetikliyorum 
+        return _super.call(this, id, firstName, lastName) || this;
+    }
+    return Employee;
+}(Person));
+var employee = new Employee(29, "Can", "Boz");
+console.log(employee.getFullName());
+// let personInfo = new Person(43, "Can", "Boz");
+// console.log(personInfo.id);

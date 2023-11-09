@@ -1,32 +1,31 @@
-function add(a:number,b:number){
-  return a+b;
+//parent
 
-}
-let sum=add(3,5)
-console.log(sum);
-
-function bastir(): void {
-  console.log("Can Boz");
-}
-bastir();
-
-function birlesdir(name:string,sname:string="Boz"):string{
- return `${name}  ${sname}`
-
-}
-console.log(birlesdir('Minaya'));
-
-function carpim(a: number, b: number, c?: number) {
-  if (typeof c !== "undefined") {
-    return a * b * c;
+class Person {
+  //initalise etme
+  id: number;
+  private firstName: string;
+  readonly lastName: string;
+  //deger atamasi icin
+  constructor(id: number, firstName: string, lastName: string) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
   }
-  return a * b;
+
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
 }
+//yeni class toretiyoruz 
+class Employee extends Person {
+  //parent clasimin constructorunu super keywordu ile cagiririq
+  constructor(id: number, firstName: string, lastName: string) {
+    //parent clasimin constructorunu tetikliyorum 
+    super(id, firstName, lastName);
+  }
+}
+let employee=new Employee(29,"Can","Boz")
+console.log(employee.getFullName());
 
-console.log(carpim(3,4,5));
-
-//arrow
-let carpim=():void=>console.log('jj');
- 
-
-carpim()
+// let personInfo = new Person(43, "Can", "Boz");
+// console.log(personInfo.id);
