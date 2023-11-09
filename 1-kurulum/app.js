@@ -75,30 +75,50 @@
 // // console.log("==");
 // // }
 // x > y ? console.log("x>y") : console.log("x<y");
-var day = 22;
-switch (day) {
-    case 0:
-        console.log("bazar");
-        break;
-    case 1:
-        console.log("cuma");
-        break;
-    case 2:
-        console.log("sali");
-        break;
-    case 3:
-        console.log("cersembe");
-        break;
-    case 4:
-        console.log("cuma");
-        break;
-    case 5:
-        console.log("bazar");
-        break;
-    case 6:
-        console.log("pazartesi");
-        break;
-    default:
-        console.log("def");
-        break;
-}
+// let day: number = 22;
+// switch (day) {
+//   case 0:
+//     console.log("bazar");
+//     break;
+//   case 1:
+//     console.log("cuma");
+//     break;
+//   case 2:
+//     console.log("sali");
+//     break;
+//   case 3:
+//     console.log("cersembe");
+//     break;
+//   case 4:
+//     console.log("cuma");
+//     break;
+//   case 5:
+//     console.log("bazar");
+//     break;
+//   case 6:
+//     console.log("pazartesi");
+//     break;
+//     default:console.log("def");
+//     break;
+// }
+// for (let i = 0; i < 3; i++) {
+//   console.log("i degeri ", i);
+// }
+// let arr=[10,20,30,40]
+// for (let item in arr) {
+// console.log(item);
+// }
+// let str="Minaya"
+// for (let a of str){
+//   console.log(a);
+// }
+var counter = 56;
+// while (counter < 5) {
+//   console.log(counter);
+//   counter++;
+//   if(counter==3) break
+// }
+do {
+    console.log('calis', counter);
+    counter++;
+} while (counter < 3);
